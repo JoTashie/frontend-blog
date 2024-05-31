@@ -19,7 +19,7 @@ const Contact = () => {
     <Container>
       <h1>Contact Us</h1>
       <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="name">
+        <Form.Group key="name">
           <Form.Label>Name:</Form.Label>
           <Form.Control
             type="text"
@@ -28,7 +28,7 @@ const Contact = () => {
             required
           />
         </Form.Group>
-        <Form.Group controlId="email">
+        <Form.Group key="email">
           <Form.Label>Email:</Form.Label>
           <Form.Control
             type="email"
@@ -37,7 +37,7 @@ const Contact = () => {
             required
           />
         </Form.Group>
-        <Form.Group controlId="message">
+        <Form.Group key="message">
           <Form.Label>Message:</Form.Label>
           <Form.Control
             as="textarea"

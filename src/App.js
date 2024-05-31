@@ -1,20 +1,38 @@
-
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Contact from './components/Contact';
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <Container>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/contact" component={Contact} />
-        </Switch>
-      </Container>
-    </Router>
+    <div className="App">
+      <Router>
+        <header>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <main>
+          <Routes>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/contact" component={Contact} />
+          {/* Define routes for other pages */}
+          {/* <Route path="/about" component={About} /> */}
+          {/* <Route path="/contact" component={Contact} /> */}
+          </Routes>
+        </main>
+      </Router>
+    </div>
   );
 }
 
